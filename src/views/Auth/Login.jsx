@@ -7,7 +7,7 @@ import {
     LOGIN,
     LOGIN_PAGE_UNLOADED
 } from '../../constants/actionTypes';
-import { Redirect } from 'react-router-dom';
+import { Redirect, Link } from 'react-router-dom';
 
 import 'react-confirm-alert/src/react-confirm-alert.css' // Import css
 
@@ -84,6 +84,10 @@ class Login extends Component {
                                     </button>
                                 </fieldset>
                             </form>
+
+                            <Link to='/register'>
+                                not registered yet?
+                            </Link>
                         </div>
 
                     </div>

@@ -4,7 +4,7 @@ import _superagent from 'superagent';
 
 const superagent = superagentPromise(_superagent, global.Promise);
 
-const API_ROOT = process.env.NODE_ENV === 'production' ? 'https://ismachat-be.herokuapp.com/' : 'http://localhost:3000';
+const API_ROOT = process.env.NODE_ENV === 'production' ? 'https://ismachat-be.herokuapp.com' : 'http://localhost:9090';
 
 const encode = encodeURIComponent;
 const responseBody = res => res.body;
@@ -35,7 +35,7 @@ const Auth = {
   current: () =>
     requests.get('/user'),
   login: (username, password) =>
-    requests.post('/login', { username: username, password: password }),
+    requests.post('/api/login', { username: username, password: password }),
   register: (username, email, password) =>
     requests.post('/users', { user: { username, email, password } }),
   save: user =>
